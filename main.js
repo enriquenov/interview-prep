@@ -116,30 +116,56 @@ console.log(BinarySearch(numbers));
 // console.log(average);
 
 
-// The Supermarket Queue
+// The Supermarket Queue Answer 1
 
-function queueTime(customers, n) {
-  if (n < 1) return 0;
-  if (n === 1) return customers.reduce((acc, customer) => acc + customer, 0);
+// function queueTime(customers, n) {
+//
+//   if (n < 1) return 0;
+//   if (n === 1) return customers.reduce((acc, customer) => acc + customer, 0);
+//
+//   var head = customers.slice(0, n);
+//   var tail = customers.slice(n);
+//   var lines = tail.reduce((acc, customer) => {
+//     var min = acc.indexOf(Math.min(...acc));
+//     acc[min] += customer;
+//     return acc;
+//   }, head);
+//   return Math.max(...lines);
+// }
+//
+// console.log(queueTime([10,2,6,3], 2));
 
-  var head = customers.slice(0, n);
-  var tail = customers.slice(n);
+// The Supermarket Queue Answer 2
 
-  function reducer(acc, customer) {
-    var minIdx = acc.indexOf(Math.min(...acc));
+// function queueTime(customers, n) {
+//   var result = new Array(2).fill(0);
+//   for (let t of customers) {
+//     let idx = result.indexOf(Math.min(...result));
+//     result[idx] += t;
+//   }
+//   return Math.max(...result);
+// }
+//
+// console.log(queueTime([10,2,6,3], 2));
 
-    console.log(minIdx);
-    console.log("This is the acc minIdx: " + acc[minIdx]);
-    console.log("This is the customer: " + customer);
+// BubbleSort Implementation
 
-    acc[minIdx] += customer;
-
-    return acc;
-  };
-
-  var lines = tail.reduce(reducer, head);
-
-  return Math.max(...lines);
+function bubbleSort(arr) {
+  var swapped;
+  do {
+    swapped = false;
+    for (var i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i+1]) {
+        var temp = arr[i];
+        arr[i] = arr[i+1];
+        arr[i+1] = temp;
+        swapped = true;
+      }
+    }
+  } while (swapped);
 }
 
-console.log(queueTime([10,2,6,3], 2));
+var arr1 = [2, 3, 5, 8, 12, 67, 80, 12, 7, 23, 6];
+bubbleSort(arr1);
+
+console.log(arr1);
