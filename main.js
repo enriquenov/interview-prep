@@ -150,22 +150,22 @@ console.log(BinarySearch(numbers));
 
 // BubbleSort Implementation
 
-function bubbleSort(arr) {
-  var swapped;
-  do {
-    swapped = false;
-    for (var i = 0; i < arr.length - 1; i++) {
-      if (arr[i] > arr[i+1]) {
-        var temp = arr[i];
-        arr[i] = arr[i+1];
-        arr[i+1] = temp;
-        swapped = true;
-      }
-    }
-  } while (swapped);
-}
-
-var arr1 = [2, 3, 5, 8, 12, 67, 80, 12, 7, 23, 6];
-bubbleSort(arr1);
-
-console.log(arr1);
+// function bubbleSort(arr) {
+//   var swapped;
+//   do {
+//     swapped = false;
+//     for (var i = 0; i < arr.length - 1; i++) {
+//       if (arr[i] > arr[i+1]) {
+//         var temp = arr[i];
+//         arr[i] = arr[i+1];
+//         arr[i+1] = temp;
+//         swapped = true;
+//       }
+//     }
+//   } while (swapped);
+// }
+//
+// var arr1 = [2, 3, 5, 8, 12, 67, 80, 12, 7, 23, 6];
+// bubbleSort(arr1);
+//
+// console.log(arr1);
