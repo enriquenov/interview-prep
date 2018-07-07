@@ -2,28 +2,28 @@ console.log("Enrique is coding.");
 
 // // HOW MANY 1s ARE IN A SORTED BINARY ARRAY.
 
-function BinarySearch(arr) {
-  var low = 0,
-      high = arr.length - 1,
-      index = -1;
-
-  while (low <= high) {
-    var mid = Math.floor((high+low)/2);
-
-    if (arr[mid] == 1) {
-      index = mid;
-      high = mid - 1;
-    } else if (arr[mid] == 0) {
-      low = mid + 1;
-    }
-  }
-
-  return index == -1 ? "There are no 1s in the 'sorted' array." : arr.length - index;
-}
-
-var numbers = [0, 0, 0, 0, 0, 0, 0, 0, 1];
-
-console.log(BinarySearch(numbers));
+// function BinarySearch(arr) {
+//   var low = 0,
+//       high = arr.length - 1,
+//       index = -1;
+//
+//   while (low <= high) {
+//     var mid = Math.floor((high+low)/2);
+//
+//     if (arr[mid] == 1) {
+//       index = mid;
+//       high = mid - 1;
+//     } else if (arr[mid] == 0) {
+//       low = mid + 1;
+//     }
+//   }
+//
+//   return index == -1 ? "There are no 1s in the 'sorted' array." : arr.length - index;
+// }
+//
+// var numbers = [0, 0, 0, 0, 0, 0, 0, 0, 1];
+//
+// console.log(BinarySearch(numbers));
 
 // function Dog() {
 // }
@@ -150,22 +150,22 @@ console.log(BinarySearch(numbers));
 
 // BubbleSort Implementation
 
-// function bubbleSort(arr) {
-//   var swapped;
-//   do {
-//     swapped = false;
-//     for (var i = 0; i < arr.length - 1; i++) {
-//       if (arr[i] > arr[i+1]) {
-//         var temp = arr[i];
-//         arr[i] = arr[i+1];
-//         arr[i+1] = temp;
-//         swapped = true;
-//       }
-//     }
-//   } while (swapped);
-// }
-//
-// var arr1 = [2, 3, 5, 8, 12, 67, 80, 12, 7, 23, 6];
-// bubbleSort(arr1);
-//
-// console.log(arr1);
+function bubbleSort(arr) {
+  var swapped;
+  do {
+    swapped = false;
+    for (var i = 0; i < arr.length - 1; i++) {
+      if (arr[i] > arr[i+1]) {
+        var temp = arr[i];
+        arr[i] = arr[i+1];
+        arr[i+1] = temp;
+        swapped = true;
+      }
+    }
+  } while (swapped);
+}
+
+var arr1 = [2, 3, 5, 8, 12, 67, 80, 12, 7, 23, 6];
+bubbleSort(arr1);
+
+console.log(arr1);
